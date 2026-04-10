@@ -1,0 +1,269 @@
+.page { max-width: 900px; margin: 0 auto; }
+
+.header { margin-bottom: 2rem; }
+
+.title {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  letter-spacing: 2px;
+  color: var(--blue);
+  font-weight: 400;
+}
+
+.sub { font-size: .85rem; color: var(--text2); margin-top: .2rem; }
+
+/* Secciones */
+.section { margin-bottom: 2rem; }
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: .75rem;
+  border-bottom: 2px solid var(--blue-light);
+}
+
+.sectionIcon { font-size: 1.5rem; line-height: 1; }
+
+.sectionTitle {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--blue);
+}
+
+/* Cómo participar */
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.stepCard {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  box-shadow: var(--shadow);
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.stepNum {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--blue);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.stepContent {}
+.stepTitle { font-size: .9rem; font-weight: 700; color: var(--text); margin-bottom: .25rem; }
+.stepDesc { font-size: .8rem; color: var(--text2); line-height: 1.5; }
+
+/* Sistema de puntos */
+.pointsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.pointCard {
+  border-radius: var(--radius);
+  padding: 1.5rem 1.25rem;
+  text-align: center;
+  border: 1px solid transparent;
+}
+
+.exactCard {
+  background: #EAF7EC;
+  border-color: rgba(46,158,58,.2);
+}
+
+.winnerCard {
+  background: #FFF8E8;
+  border-color: rgba(224,122,0,.2);
+}
+
+.noneCard {
+  background: var(--surface2);
+  border-color: var(--border);
+}
+
+.pointsBig {
+  font-family: var(--font-display);
+  font-size: 3.5rem;
+  line-height: 1;
+  margin-bottom: .1rem;
+}
+
+.exactCard .pointsBig { color: var(--green); }
+.winnerCard .pointsBig { color: var(--amber); }
+.noneCard .pointsBig { color: var(--muted); }
+
+.pointsLabel { font-size: .7rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--muted); font-weight: 600; margin-bottom: .5rem; }
+.pointsDesc { font-size: .875rem; font-weight: 700; color: var(--text); margin-bottom: .25rem; }
+.pointsExample { font-size: .75rem; color: var(--text2); }
+
+/* Ejemplo interactivo */
+.exampleBox {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  box-shadow: var(--shadow);
+}
+
+.exampleTitle {
+  font-size: .8rem;
+  font-weight: 700;
+  color: var(--text2);
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.exampleTable { display: flex; flex-direction: column; gap: .5rem; }
+
+.exampleRow {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr auto;
+  align-items: center;
+  gap: .75rem;
+  padding: .6rem .875rem;
+  background: var(--surface2);
+  border-radius: var(--radius-sm);
+  font-size: .8rem;
+}
+
+.exampleMatch { font-weight: 600; color: var(--text); }
+.examplePred { color: var(--text2); }
+.exampleResult { color: var(--text2); }
+
+.examplePts {
+  font-weight: 700;
+  font-size: .8rem;
+  padding: .2rem .6rem;
+  border-radius: 4px;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.exact { background: #EAF7EC; color: var(--green-dark); }
+.winner { background: #FFF8E8; color: var(--amber); }
+.none { background: var(--surface); color: var(--muted); border: 1px solid var(--border); }
+
+/* Reglas de predicciones */
+.rulesGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.ruleCard {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  box-shadow: var(--shadow);
+}
+
+.ruleIcon { font-size: 1.5rem; margin-bottom: .5rem; }
+.ruleTitle { font-size: .9rem; font-weight: 700; color: var(--text); margin-bottom: .4rem; }
+.ruleDesc { font-size: .8rem; color: var(--text2); line-height: 1.6; }
+.ruleDesc strong { color: var(--blue); }
+
+/* Ranking */
+.rankingInfo {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+}
+
+.rankingMain {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  font-size: .875rem;
+  color: var(--text2);
+  margin-bottom: 1.25rem;
+  line-height: 1.6;
+}
+
+.rankingMain strong { color: var(--text); }
+
+.tiebreakers { display: flex; flex-direction: column; gap: .875rem; }
+
+.tieItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: .875rem;
+  background: var(--surface2);
+  border-radius: var(--radius-sm);
+}
+
+.tiePriority {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--blue);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: .75rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.tieTitle { font-size: .85rem; font-weight: 700; color: var(--text); margin-bottom: .2rem; }
+.tieDesc { font-size: .78rem; color: var(--text2); }
+
+/* Consideraciones generales */
+.generalList {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: .875rem;
+}
+
+.generalItem {
+  display: flex;
+  align-items: flex-start;
+  gap: .75rem;
+  font-size: .85rem;
+  color: var(--text2);
+  line-height: 1.6;
+}
+
+.bullet {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--blue);
+  flex-shrink: 0;
+  margin-top: .45rem;
+}
+
+@media (max-width: 768px) {
+  .cardGrid { grid-template-columns: 1fr; }
+  .pointsGrid { grid-template-columns: 1fr; }
+  .rulesGrid { grid-template-columns: 1fr; }
+  .exampleRow { grid-template-columns: 1fr 1fr; gap: .4rem; }
+  .exampleMatch { grid-column: 1 / -1; }
+}

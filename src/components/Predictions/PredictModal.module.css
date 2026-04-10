@@ -1,0 +1,213 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(26,35,64,.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  padding: 1rem;
+}
+
+.modal {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  width: 100%;
+  max-width: 440px;
+  padding: 1.5rem;
+  box-shadow: var(--shadow-md);
+  animation: slideUp .2s ease;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.group {
+  font-size: .7rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: .2rem;
+  font-weight: 600;
+}
+
+.dateStr { font-size: .8rem; color: var(--text2); text-transform: capitalize; }
+
+.closeBtn {
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-size: 1rem;
+  padding: .25rem;
+  transition: color .2s;
+}
+.closeBtn:hover { color: var(--text); }
+
+.teams {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.team { display: flex; flex-direction: column; align-items: center; gap: .5rem; flex: 1; }
+.flag { font-size: 2.5rem; line-height: 1; }
+.teamName { font-size: .8rem; color: var(--text2); font-weight: 500; text-align: center; }
+
+.vs {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  color: var(--muted);
+  flex-shrink: 0;
+  padding: 0 .5rem;
+}
+
+/* Controles */
+.scoreInputs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.scoreControl { display: flex; flex-direction: column; align-items: center; gap: .5rem; }
+
+.adjBtn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--blue-light);
+  border: 1px solid var(--border);
+  color: var(--blue);
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all .15s;
+}
+.adjBtn:hover { background: var(--blue); color: #fff; border-color: var(--blue); }
+
+.scoreValue {
+  font-family: var(--font-display);
+  font-size: 3.5rem;
+  color: var(--text);
+  line-height: 1;
+  min-width: 60px;
+  text-align: center;
+}
+
+.scoreSep {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: var(--muted);
+  padding-top: 2rem;
+}
+
+.resultPreview { text-align: center; margin-bottom: 1rem; }
+
+.resultLabel {
+  display: inline-block;
+  font-size: .8rem;
+  font-weight: 600;
+  color: var(--blue);
+  background: var(--blue-light);
+  padding: .3rem .875rem;
+  border-radius: 20px;
+}
+
+.pointsInfo {
+  background: var(--surface2);
+  border-radius: var(--radius-sm);
+  padding: .75rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: .4rem;
+  margin-bottom: .75rem;
+}
+
+.pointsRow {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  font-size: .75rem;
+  color: var(--text2);
+}
+
+.pointsBadge {
+  font-size: .7rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.closeTime { text-align: center; font-size: .7rem; color: var(--muted); margin-bottom: 1rem; }
+
+.error {
+  background: var(--red-light);
+  border: 1px solid rgba(217,48,37,.2);
+  border-radius: var(--radius-sm);
+  padding: .6rem .875rem;
+  font-size: .8rem;
+  color: var(--red);
+  margin-bottom: 1rem;
+}
+
+.actions { display: grid; grid-template-columns: 1fr 2fr; gap: .75rem; }
+
+.cancelBtn {
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text2);
+  padding: .7rem;
+  font-size: .875rem;
+  transition: all .2s;
+}
+.cancelBtn:hover { border-color: var(--border2); color: var(--text); }
+
+.saveBtn {
+  background: var(--blue);
+  border: none;
+  border-radius: var(--radius-sm);
+  color: #fff;
+  padding: .7rem;
+  font-size: .875rem;
+  font-weight: 600;
+  transition: background .2s;
+}
+.saveBtn:hover:not(:disabled) { background: var(--blue-dark); }
+.saveBtn:disabled { opacity: .5; cursor: not-allowed; }
+
+/* Cerrado */
+.closed { text-align: center; padding: 1rem 0; }
+.closedIcon { font-size: 2rem; margin-bottom: .75rem; }
+.closedTitle { font-size: 1rem; font-weight: 600; color: var(--text); margin-bottom: .25rem; }
+.closedSub { font-size: .8rem; color: var(--muted); margin-bottom: 1rem; }
+
+.myPrediction {
+  background: var(--blue-light);
+  border-radius: var(--radius-sm);
+  padding: .75rem;
+  margin-top: .75rem;
+}
+
+.predLabel { font-size: .65rem; color: var(--muted); margin-bottom: .2rem; }
+.predValue { font-size: .9rem; font-weight: 600; color: var(--blue); }
+
+@media (max-width: 480px) {
+  .modal { padding: 1.25rem; }
+  .scoreValue { font-size: 2.8rem; }
+  .flag { font-size: 2rem; }
+}
