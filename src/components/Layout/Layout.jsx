@@ -61,7 +61,10 @@ export default function Layout() {
 
       <header className={styles.mobileHeader}>
         <img src="/logo-distrocuyo.png" alt="Distrocuyo" className={styles.mobileLogoImg} />
-        <div className={styles.avatar} style={{ width: '32px', height: '32px', fontSize: '.65rem' }}>{initials}</div>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '.75rem' }}>
+          <div className={styles.avatar} style={{ width: '32px', height: '32px', fontSize: '.65rem' }}>{initials}</div>
+          <button className={styles.mobileSignOutBtn} onClick={handleSignOut}>Salir</button>
+        </div>
       </header>
 
       <main className={styles.main}>
@@ -69,7 +72,7 @@ export default function Layout() {
       </main>
 
       <nav className={styles.mobileNav}>
-        {NAV_ITEMS.slice(0, 5).map(({ to, label, icon: Icon, end }) => (
+        {NAV_ITEMS.map(({ to, label, icon: Icon, end }) => (
           <NavLink
             key={to}
             to={to}

@@ -150,6 +150,7 @@
 }
 
 .mobileNav {
+  overflow-x: auto;
   display: none;
   position: fixed;
   bottom: 0;
@@ -185,6 +186,23 @@
   }
   .sidebar { display: none; }
   .mobileHeader { display: flex; }
-  .mobileNav { display: flex; }
+  .mobileNav {
+  overflow-x: auto; display: flex; }
   .main { padding: 1rem; min-height: unset; }
+}
+
+.mobileSignOutBtn {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text2);
+  font-size: .75rem;
+  font-weight: 500;
+  padding: .3rem .6rem;
+  transition: all .2s;
+}
+
+.mobileSignOutBtn:hover {
+  border-color: var(--red);
+  color: var(--red);
 }
