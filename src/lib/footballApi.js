@@ -1,14 +1,9 @@
 // football-data.org — Plan gratuito: 10 requests/minuto
-// Competición del Mundial 2026: código WC (FIFA World Cup)
+// En desarrollo usa el proxy de Vite, en producción usa la Serverless Function de Vercel
 
-const BASE_URL = '/api-football/v4'
+const IS_DEV = import.meta.env.DEV
 const API_KEY = import.meta.env.VITE_FOOTBALL_API_KEY
-
-// ID API Mundial
-// const WC_ID = 2000
-
-//ID API Champions
-const WC_ID = 2001
+const WC_ID = 2000
 
 // Caché en memoria: 5 minutos para no superar el límite del plan gratuito
 const cache = new Map()
@@ -20,9 +15,22 @@ async function fetchFD(endpoint) {
     return cached.data
   }
 
-  const res = await fetch(`${BASE_URL}${endpoint}`, {
-    headers: { 'X-Auth-Token': API_KEY },
-  })
+  // En desarrollo: proxy de Vite (/api-football/v4/...)
+  // En producción: serverless function de Vercel (/api/football?path=/v4/...)
+  let res
+  if (IS_DEV) {
+    res = await fetch(`/api-football/v4${endpoint}`, {
+      headers: { 'X-Auth-Token': API_KEY },
+    })
+  } else {
+    // Separar path y query params
+    const [path, query] = endpoint.includes('?')
+      ? endpoint.split('?')
+      : [endpoint, '']
+    const params = new URLSearchParams(query)
+    params.set('path', '/v4' + path)
+    res = await fetch(`/api/football?${params.toString()}`)
+  }
 
   if (res.status === 429) {
     // Si hay caché viejo, devolverlo antes que nada
