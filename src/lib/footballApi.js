@@ -3,7 +3,12 @@
 
 const IS_DEV = import.meta.env.DEV
 const API_KEY = import.meta.env.VITE_FOOTBALL_API_KEY
-const WC_ID = 2000
+
+//API ID MUNDIAL
+//const WC_ID = 2000
+
+//API ID CHAMPION
+const WC_ID = 2001
 
 // Caché en memoria: 5 minutos para no superar el límite del plan gratuito
 const cache = new Map()
