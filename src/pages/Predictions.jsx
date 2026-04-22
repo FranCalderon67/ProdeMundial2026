@@ -1,20 +1,24 @@
-import { useState } from 'react'
+import { useState, useMemo } from 'react'
 import { useMatches } from '../hooks/useMatches'
 import { usePredictions } from '../hooks/usePredictions'
 import { teamNameES, teamFlag } from '../lib/footballApi'
 import { canPredict, timeUntilClose, pointsLabel, POINTS_EXACT, POINTS_WINNER } from '../lib/points'
 import PredictModal from '../components/Predictions/PredictModal'
-import { usePointsCalculator } from '../hooks/usePointsCalculator'
 import styles from './Predictions.module.css'
 
 export default function Predictions() {
   const { upcoming, finished, loading } = useMatches()
   const { getPrediction, savePrediction } = usePredictions()
-  usePointsCalculator(finished)
   const [selectedMatch, setSelectedMatch] = useState(null)
   const [tab, setTab] = useState('upcoming')
 
-  const matches = tab === 'upcoming' ? upcoming : finished
+  // Próximos: más cercano primero. Terminados: más reciente primero.
+  const matches = useMemo(() => {
+    if (tab === 'upcoming') {
+      return [...upcoming].sort((a, b) => new Date(a.utcDate) - new Date(b.utcDate))
+    }
+    return [...finished].sort((a, b) => new Date(b.utcDate) - new Date(a.utcDate))
+  }, [tab, upcoming, finished])
 
   async function handleSave(matchId, homeGoals, awayGoals) {
     await savePrediction(matchId, homeGoals, awayGoals)
